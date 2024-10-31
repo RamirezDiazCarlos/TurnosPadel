@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurnosPadel", "TurnosPadel\TurnosPadel.csproj", "{DC2EC88F-5D6C-49A2-A9A6-EDEBA2F07704}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TurnosPadel", "TurnosPadel\TurnosPadel.csproj", "{DC2EC88F-5D6C-49A2-A9A6-EDEBA2F07704}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{4514FF05-4BC7-461C-9D41-A6457566F99A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{4514FF05-4BC7-461C-9D41-A6457566F99A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{2D50B024-C8E3-4E4F-B755-2EB1D5FF57B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{2D50B024-C8E3-4E4F-B755-2EB1D5FF57B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructure", "Infraestructure\Infraestructure.csproj", "{BF76DA2C-3533-4C9D-A798-EC0E7869D1B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infraestructure\Infrastructure.csproj", "{BF76DA2C-3533-4C9D-A798-EC0E7869D1B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
