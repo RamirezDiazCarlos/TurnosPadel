@@ -48,5 +48,11 @@ namespace Infrastructure.Data.Repositories
                 _context.SaveChanges();
             }
         }
+        public Usuario GetUsuarioByCredentials(string nombre, string contrasena)
+        {
+
+            return _context.Usuarios.FirstOrDefault(u => u.Nombre == nombre && u.Contrasena == contrasena);
+        }
+
     }
 }
