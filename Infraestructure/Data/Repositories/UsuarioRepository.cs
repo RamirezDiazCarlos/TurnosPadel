@@ -27,6 +27,11 @@ namespace Infrastructure.Data.Repositories
             return _context.Usuarios.ToList();
         }
 
+        public Usuario ObtenerPorDni(string dni)
+        {
+            return _context.Usuarios.FirstOrDefault(u => u.Dni == dni);
+        }
+
         public void Crear(Usuario usuario)
         {
             _context.Usuarios.Add(usuario);

@@ -1,3 +1,4 @@
+using Application;
 using Application.Services;
 using Domain.Interfaces;
 using Infrastructure.Data;
@@ -17,14 +18,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+;
 builder.Services.AddScoped<IReservaRepository, ReservaRepository>();
 builder.Services.AddScoped<ICanchaRepository, CanchaRepository>();
 builder.Services.AddScoped<IClubRepository, ClubRepository>();
+builder.Services.AddScoped<IAutenticacionService, AutenticacionService>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
 builder.Services.AddScoped<ClubService>();
 builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddScoped<ReservaService>();
 builder.Services.AddScoped<CanchaService>();
+
+
 
 
 var app = builder.Build();

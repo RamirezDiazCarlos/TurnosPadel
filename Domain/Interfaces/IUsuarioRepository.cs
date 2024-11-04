@@ -10,6 +10,7 @@ namespace Domain.Interfaces
         void Crear(Usuario usuario);
         void Actualizar(Usuario usuario);
         void Eliminar(int id);
+        Usuario ObtenerPorDni(string id);
     }
 }
 
