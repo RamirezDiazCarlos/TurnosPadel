@@ -11,6 +11,7 @@ namespace Domain.Interfaces
         void Actualizar(Usuario usuario);
         void Eliminar(int id);
         Usuario ObtenerPorDni(string id);
+        void SaveChanges();
     }
 }
 

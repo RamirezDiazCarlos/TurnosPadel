@@ -1,7 +1,9 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
+using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Data.Repositories
+namespace Infrastructure.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
@@ -19,7 +21,7 @@ namespace Infrastructure.Data.Repositories
 
         public Usuario ObtenerPorEmail(string email)
         {
-            return _context.Usuarios.Find(email);
+            return _context.Usuarios.FirstOrDefault(u => u.Email == email);
         }
 
         public List<Usuario> ObtenerTodos()
@@ -27,31 +29,33 @@ namespace Infrastructure.Data.Repositories
             return _context.Usuarios.ToList();
         }
 
-        public Usuario ObtenerPorDni(string dni)
-        {
-            return _context.Usuarios.FirstOrDefault(u => u.Dni == dni);
-        }
-
         public void Crear(Usuario usuario)
         {
             _context.Usuarios.Add(usuario);
-            _context.SaveChanges(); // guardar cambios en la bd
         }
 
         public void Actualizar(Usuario usuario)
         {
             _context.Usuarios.Update(usuario);
-            _context.SaveChanges();
         }
 
         public void Eliminar(int id)
         {
-            var usuario = _context.Usuarios.Find(id);
+            var usuario = ObtenerPorId(id);
             if (usuario != null)
             {
                 _context.Usuarios.Remove(usuario);
-                _context.SaveChanges();
             }
+        }
+
+        public Usuario ObtenerPorDni(string dni)
+        {
+            return _context.Usuarios.FirstOrDefault(u => u.Dni == dni);
+        }
+
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
         }
     }
 }

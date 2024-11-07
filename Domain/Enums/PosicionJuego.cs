@@ -2,8 +2,8 @@
 {
     public enum PosicionJuego
     {
-        Drive,
-        Reves,
-        Ambas
+        Drive = 1,
+        Reves = 2,
+        Ambas = 3
     }
 }
