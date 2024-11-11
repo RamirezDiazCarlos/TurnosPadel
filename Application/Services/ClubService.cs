@@ -24,7 +24,25 @@ namespace Application.Services
                 };
                 club.Canchas.Add(cancha);
             }
-            _clubRepository.Crear(club);
+            _clubRepository.CrearClub(club);
+        }
+
+        public void CrearClub(Club club, int cantidadDeCanchas)
+        {
+            
+            if (club == null)
+            {
+                throw new ArgumentNullException(nameof(club), "El club no puede ser nulo.");
+            }
+
+            if (string.IsNullOrWhiteSpace(club.Nombre))
+            {
+                throw new ArgumentException("El nombre del club no puede estar vacío.", nameof(club.Nombre));
+            }
+
+            InicializarCanchasParaClub(club, cantidadDeCanchas);
+
+            _clubRepository.CrearClub(club);
         }
 
         public Club ObtenerClubPorId(int id)

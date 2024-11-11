@@ -7,7 +7,7 @@ namespace Domain.Interfaces
     {
         Club ObtenerPorId(int id);
         List<Club> ObtenerTodos();
-        void Crear(Club club);
+        void CrearClub(Club club);
         void Actualizar(Club club);
         void Eliminar(int id);
     }

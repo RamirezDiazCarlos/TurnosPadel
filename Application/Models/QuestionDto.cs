@@ -1,5 +1,4 @@
 ﻿
-
 namespace Application.Models
 {
     public class QuestionDto

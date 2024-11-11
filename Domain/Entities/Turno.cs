@@ -1,6 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Domain.Entities
 {
@@ -14,6 +15,7 @@ namespace Domain.Entities
         public int Cupo { get; set; }
         public bool Disponible { get; set; }
         public int CanchaId { get; set; }
+        [JsonIgnore]
         public Cancha Cancha { get; set; }
     }
 }

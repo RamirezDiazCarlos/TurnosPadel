@@ -1,4 +1,5 @@
-﻿using Application.Services;
+﻿using Application.Models;
+using Application.Services;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,14 +17,21 @@ namespace TurnosPadel.Controllers
         }
 
         [HttpPost]
-        public IActionResult CrearClub([FromBody] Club club)
+        public IActionResult Crear([FromBody] ClubDto clubDto)
         {
-            if (!ModelState.IsValid)
+            var club = new Club
             {
-                return BadRequest(ModelState);
-            }
+                Id = clubDto.Id,
+                Nombre = clubDto.Nombre,
+                Descripcion = clubDto.Descripcion,
+                CVU = clubDto.CVU,
+                Email = clubDto.Email,
+            };
 
-            _clubService.InicializarCanchasParaClub(club, club.NumeroDeCanchas);
+            int cantidadDeCanchas = clubDto.NumeroDeCanchas;
+
+            _clubService.CrearClub(club, cantidadDeCanchas);
+
             return CreatedAtAction(nameof(ObtenerClubPorId), new { id = club.Id }, club);
         }
 

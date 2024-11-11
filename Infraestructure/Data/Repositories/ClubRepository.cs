@@ -23,8 +23,9 @@ namespace Infrastructure.Data.Repositories
             return _context.Clubes.Include(c => c.Canchas).ToList();
         }
 
-        public void Crear(Club club)
+        public void CrearClub(Club club)
         {
+            club.Id = 0;
             _context.Clubes.Add(club);
             _context.SaveChanges();
         }
@@ -46,4 +47,3 @@ namespace Infrastructure.Data.Repositories
         }
     }
 }
-

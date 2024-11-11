@@ -1,0 +1,13 @@
+﻿
+namespace Application.Models
+{
+    public class ClubDto
+    {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public string CVU { get; set; }
+        public string Email { get; set; }
+        public int NumeroDeCanchas { get; set; }
+    }
+}
