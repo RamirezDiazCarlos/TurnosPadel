@@ -33,7 +33,7 @@ namespace TurnosPadel.Controllers
                 Edad = usuario.Edad,
                 Dni = usuario.Dni,
                 Rol = usuario.Rol,
-                PosicionEnCancha = usuario.PosicionEnCancha.ToString()
+                PosicionEnCancha = usuario.PosicionEnCancha
             };
 
             return Ok(usuarioDto);
@@ -53,7 +53,7 @@ namespace TurnosPadel.Controllers
                 Edad = usuario.Edad,
                 Dni = usuario.Dni,
                 Rol = usuario.Rol,
-                PosicionEnCancha = usuario.PosicionEnCancha.ToString()
+                PosicionEnCancha = usuario.PosicionEnCancha
             }).ToList();
 
             return Ok(usuariosDto);

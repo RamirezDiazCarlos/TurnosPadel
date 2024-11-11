@@ -18,8 +18,13 @@ namespace TurnosPadel.Controllers
         [HttpPost]
         public IActionResult CrearClub([FromBody] Club club)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             _clubService.InicializarCanchasParaClub(club, club.NumeroDeCanchas);
-            return Ok(club);
+            return CreatedAtAction(nameof(ObtenerClubPorId), new { id = club.Id }, club);
         }
 
         [HttpGet("{id}")]

@@ -1,4 +1,6 @@
 ﻿
+using Domain.Enums;
+
 namespace Application.Models
 {
     public class UsuarioDto
@@ -10,6 +12,7 @@ namespace Application.Models
         public int Edad { get; set; }
         public string Dni { get; set; }
         public string Rol { get; set; }
-        public string PosicionEnCancha { get; set; }
+        public string Contrasena { get; set; }
+        public PosicionJuego PosicionEnCancha { get; set; }
     }
 }
